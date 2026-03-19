@@ -2346,12 +2346,3 @@ For final scoping, combine impact markers with core tooling artifacts instead of
 The available evidence supports a **high-confidence Akira ransomware intrusion** with likely **initial access through abused remote desktop software**, **post-compromise beaconing and reconnaissance**, **privileged movement into a server**, **data staging for theft**, and **destructive impact through ransomware execution**. The presence of **`exfil_data.zip`**, **`updater.exe`**, **`wmic shadowcopy delete`**, and filenames containing **`.akira`** indicates a mature intrusion sequence consistent with **double-extortion tradecraft**. Defensive improvements should focus on **remote-access control, Defender tampering visibility, download-and-staging detections, archive creation, recovery-inhibition commands, and privileged activity correlation across hosts**.
 
 ---
-
-<a id="analyst-notes"></a>
-## 📎 Analyst Notes
-
-- Report structure follows the provided template, but each of the **40 flags** is preserved as its own individual section.
-- Google Form answers were treated as the ground truth for findings and terminology.
-- Exact timestamps, parent processes, and some lineage details were not fully preserved in the source material and are intentionally marked for screenshot backfill rather than invented.
-- KQL sections were sourced from the reconstructed hunt pack and refined where needed to reflect preserved filename behavior, including the `.akira` marker appearing inside filenames such as `.akira.lnk`.
-- Evidence remains reproducible through Defender-style advanced hunting.
