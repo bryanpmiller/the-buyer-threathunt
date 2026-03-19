@@ -181,6 +181,8 @@ DeviceFileEvents
 
 ### 🖼️ Screenshot
 
+![Flag 1 KQL Screenshot](screenshots/flag1-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Alert on ransom-note creation and sudden appearance of high-volume suspicious file artifacts on a single host.
@@ -232,6 +234,8 @@ DeviceFileEvents
 
 ### 🖼️ Screenshot
 
+![Flag 2 Ransom Note Screenshot](screenshots/flag2-ransomnote.png)
+
 ### 🛠️ Detection Recommendation
 
 Preserve ransom-note content during triage and standardize extraction of extortion portal details.
@@ -276,6 +280,8 @@ The victim identifier is part of the extortion workflow and should be preserved 
 N/A Found in ransom note provided
 
 ### 🖼️ Screenshot
+
+![Flag 3 Ransom Note Screenshot](screenshots/flag3-ransomnote.png)
 
 ### 🛠️ Detection Recommendation
 
@@ -327,6 +333,8 @@ DeviceFileEvents
 ```
 
 ### 🖼️ Screenshot
+
+![Flag 4 KQL Screenshot](screenshots/flag4-kql.png)
 
 ### 🛠️ Detection Recommendation
 
@@ -380,6 +388,8 @@ DeviceNetworkEvents
 
 ### 🖼️ Screenshot
 
+![Flag 5 KQL Screenshot](screenshots/flag5-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Alert on uncommon domains contacted by script interpreters, newly introduced tools, or admin utilities.
@@ -430,6 +440,8 @@ DeviceNetworkEvents
 
 ### 🖼️ Screenshot
 
+![Flag 6 KQL Screenshot](screenshots/flag6-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Treat content-delivery style subdomains as suspicious when they appear in conjunction with hostile tool transfer activity.
@@ -479,6 +491,8 @@ DeviceNetworkEvents
 ```
 
 ### 🖼️ Screenshot
+
+![Flag 7 KQL Screenshot](screenshots/flag7-kql.png)
 
 ### 🛠️ Detection Recommendation
 
@@ -540,6 +554,8 @@ DeviceNetworkEvents
 
 ### 🖼️ Screenshot
 
+![Flag 8 KQL Screenshot](screenshots/flag8-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Baseline approved remote tools and alert on unapproved or unusually deployed remote desktop software.
@@ -592,6 +608,8 @@ DeviceProcessEvents
 
 ### 🖼️ Screenshot
 
+![Flag 9 KQL Screenshot](screenshots/flag9-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Flag destructive or defense-evasion themed scripts launched from shells or newly created paths.
@@ -642,6 +660,8 @@ DeviceFileEvents
 ```
 
 ### 🖼️ Screenshot
+
+![Flag 10 KQL Screenshot](screenshots/flag10-kql.png)
 
 ### 🛠️ Detection Recommendation
 
@@ -694,6 +714,8 @@ DeviceRegistryEvents
 
 ### 🖼️ Screenshot
 
+![Flag 11 KQL Screenshot](screenshots/flag11-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Create high-severity detections for changes to Defender policy keys, especially from scripts or unusual binaries. (NULL since defender alerted to this)
@@ -745,6 +767,8 @@ DeviceRegistryEvents
 ```
 
 ### 🖼️ Screenshot
+
+![Flag 12 KQL Screenshot](screenshots/flag12-kql.png)
 
 ### 🛠️ Detection Recommendation
 
@@ -805,6 +829,8 @@ DeviceProcessEvents
 
 ### 🖼️ Screenshot
 
+![Flag 14 KQL Screenshot](screenshots/flag14-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Monitor LSASS discovery commands outside troubleshooting, administration, or IR use cases.
@@ -857,6 +883,8 @@ DeviceEvents
 
 ### 🖼️ Screenshot
 
+![Flag 15 KQL Screenshot](screenshots/flag15-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Monitor LSASS-related pipe events and correlate them with suspicious process launches or new admin activity.
@@ -907,6 +935,8 @@ DeviceNetworkEvents
 ```
 
 ### 🖼️ Screenshot
+
+![Flag 16 KQL Screenshot](screenshots/flag16-kql.png)
 
 ### 🛠️ Detection Recommendation
 
@@ -959,6 +989,8 @@ DeviceProcessEvents
 
 ### 🖼️ Screenshot
 
+![Flag 17 KQL Screenshot](screenshots/flag17-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Flag remote-support tools executed from `Users\Public`, `Downloads`, `%Temp%`, or other user-controlled paths.
@@ -1010,6 +1042,8 @@ DeviceNetworkEvents
 
 ### 🖼️ Screenshot
 
+![Flag 18 KQL Screenshot](screenshots/flag18-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Correlate remote access tool usage with uncommon external IPs and suspicious install paths.
@@ -1060,6 +1094,8 @@ DeviceProcessEvents
 ```
 
 ### 🖼️ Screenshot
+
+![Flag 19 KQL Screenshot](screenshots/flag19-kql.png)
 
 ### 🛠️ Detection Recommendation
 
@@ -1113,6 +1149,8 @@ DeviceFileEvents
 
 ### 🖼️ Screenshot
 
+![Flag 20 KQL Screenshot](screenshots/flag20-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Monitor for newly introduced binaries with utility-like names that appear shortly after remote access events.
@@ -1163,6 +1201,8 @@ DeviceFileEvents
 ```
 
 ### 🖼️ Screenshot
+
+![Flag 21 KQL Screenshot](screenshots/flag21-kql.png)
 
 ### 🛠️ Detection Recommendation
 
@@ -1216,6 +1256,8 @@ DeviceFileEvents
 
 ### 🖼️ Screenshot
 
+![Flag 22 KQL Screenshot](screenshots/flag22-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Capture and enrich hashes for suspicious utilities to support faster environment-wide scoping.
@@ -1266,6 +1308,8 @@ DeviceFileEvents
 ```
 
 ### 🖼️ Screenshot
+
+![Flag 23 KQL Screenshot](screenshots/flag23-kql.png)
 
 ### 🛠️ Detection Recommendation
 
@@ -1326,6 +1370,8 @@ DeviceProcessEvents
 
 ### 🖼️ Screenshot
 
+![Flag 24 KQL Screenshot](screenshots/flag24-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Alert on low-prevalence scanner utilities launched from user-associated directories or portable mode.
@@ -1377,6 +1423,8 @@ DeviceFileEvents
 ```
 
 ### 🖼️ Screenshot
+
+![Flag 25 KQL Screenshot](screenshots/flag25-kql.png)
 
 ### 🛠️ Detection Recommendation
 
@@ -1430,6 +1478,10 @@ DeviceProcessEvents
 ```
 
 ### 🖼️ Screenshot
+
+![Flag 26 KQL Screenshot](screenshots/flag26-kql.png)
+
+![Flag 26 KQL Screenshot 2](screenshots/flag26-2-kql.png)
 
 ### 🛠️ Detection Recommendation
 
@@ -1493,6 +1545,8 @@ DeviceProcessEvents
 
 ### 🖼️ Screenshot
 
+![Flag 27 KQL Screenshot](screenshots/flag27-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Detect short-interval connection attempts to multiple internal IPs from a single workstation process.
@@ -1543,6 +1597,8 @@ DeviceLogonEvents
 ```
 
 ### 🖼️ Screenshot
+
+![Flag 28 KQL Screenshot](screenshots/flag28-kql.png)
 
 ### 🛠️ Detection Recommendation
 
@@ -1595,6 +1651,8 @@ DeviceProcessEvents
 ```
 
 ### 🖼️ Screenshot
+
+![Flag 29 KQL Screenshot](screenshots/flag29-kql.png)
 
 ### 🛠️ Detection Recommendation
 
@@ -1649,6 +1707,8 @@ DeviceEvents
 
 ### 🖼️ Screenshot
 
+![Flag 30 KQL Screenshot](screenshots/flag30-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Alert on PowerShell web-download activity that is immediately followed by executable creation or staging.
@@ -1700,6 +1760,8 @@ DeviceFileEvents
 ```
 
 ### 🖼️ Screenshot
+
+![Flag 31 KQL Screenshot](screenshots/flag31-kql.png)
 
 ### 🛠️ Detection Recommendation
 
@@ -1754,6 +1816,8 @@ DeviceFileEvents
 
 ### 🖼️ Screenshot
 
+![Flag 32 KQL Screenshot](screenshots/flag32-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Retain hashes for custom or uncommon utilities involved in collection and staging.
@@ -1806,6 +1870,8 @@ DeviceFileEvents
 
 ### 🖼️ Screenshot
 
+![Flag 33 KQL Screenshot](screenshots/flag33-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Alert on archive creation by uncommon tools, especially near suspicious download or encryption events.
@@ -1857,6 +1923,8 @@ DeviceFileEvents
 ```
 
 ### 🖼️ Screenshot
+
+![Flag 34 KQL Screenshot](screenshots/flag34-kql.png)
 
 ### 🛠️ Detection Recommendation
 
@@ -1911,6 +1979,8 @@ DeviceFileEvents
 
 ### 🖼️ Screenshot
 
+![Flag 35 KQL Screenshot](screenshots/flag35-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Retain and enrich ransomware payload hashes for future blocklisting and environment-wide hunts.
@@ -1962,6 +2032,8 @@ DeviceFileEvents
 ```
 
 ### 🖼️ Screenshot
+
+![Flag 36 KQL Screenshot](screenshots/flag36-kql.png)
 
 ### 🛠️ Detection Recommendation
 
@@ -2021,6 +2093,8 @@ DeviceProcessEvents
 
 ### 🖼️ Screenshot
 
+![Flag 37 KQL Screenshot](screenshots/flag37-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Create immediate, high-severity alerts for shadow copy deletion or similar recovery-inhibition commands.
@@ -2074,6 +2148,8 @@ DeviceFileEvents
 
 ### 🖼️ Screenshot
 
+![Flag 38 KQL Screenshot](screenshots/flag38-kql.png)
+
 ### 🛠️ Detection Recommendation
 
 Alert on note-like artifacts written by newly dropped executables, especially after shadow copy deletion or archive creation.
@@ -2124,6 +2200,8 @@ DeviceFileEvents
 ```
 
 ### 🖼️ Screenshot
+
+![Flag 39 KQL Screenshot](screenshots/flag39-kql.png)
 
 ### 🛠️ Detection Recommendation
 
@@ -2176,6 +2254,8 @@ DeviceFileEvents
 ```
 
 ### 🖼️ Screenshot
+
+![Flag 40 KQL Screenshot](screenshots/flag40-kql.png)
 
 ### 🛠️ Detection Recommendation
 
