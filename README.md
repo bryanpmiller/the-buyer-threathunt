@@ -1,6 +1,6 @@
-# the_buyer_portfolio_threat_hunt_report_40_flags
+# The Buyer - CyberRange Live Threat Hunt
 
-![Threat Hunt Cover Image](the_buyer_portfolio_threat_hunt_report_40_flags/The_Buyer.png)
+![Threat Hunt Cover Image](screenshots/The_Buyer.png)
 
 # 🛡️ Threat Hunt Report – The Buyer / Akira Ransomware Intrusion
 
@@ -8,7 +8,7 @@
 
 ## 📌 Executive Summary
 
-This hunt reconstructed a multi-stage ransomware intrusion affecting **AS-PC2** and **AS-SRV**. The evidence supports likely **initial access through AnyDesk**, post-compromise **beaconing and reconnaissance** from the workstation, **lateral movement** into the server with an administrator-context account, **tool download and data staging**, and final **Akira ransomware deployment** using `updater.exe`. The attack also included **Defender tampering**, **shadow copy deletion**, and **cleanup activity**, which together indicate a high-confidence, hands-on-keyboard ransomware event with both **exfiltration** and **impact** characteristics.
+This hunt reconstructed a multi-stage ransomware intrusion affecting `AS-PC2` and `AS-SRV`. The evidence supports likely `initial access through AnyDesk`, post-compromise `beaconing and reconnaissance` from the workstation, `lateral movement` into the server with an administrator-context account, `tool download and data staging`, and final `Akira ransomware deployment` using `updater.exe`. The attack also included `Defender tampering`, `shadow copy deletion`, and `cleanup activity`, which together indicate a high-confidence, hands-on-keyboard ransomware event with both `exfiltration` and `impact` characteristics.
 
 ---
 
@@ -24,61 +24,62 @@ This hunt reconstructed a multi-stage ransomware intrusion affecting **AS-PC2** 
 
 - **Environment:** Microsoft Defender Advanced Hunting / cyber range investigation environment
 - **Data Sources:** `DeviceProcessEvents`, `DeviceFileEvents`, `DeviceNetworkEvents`, `DeviceRegistryEvents`, `DeviceLogonEvents`, `DeviceEvents`
-- **Timeframe:** Full investigation window was not preserved in the source material. Confirmed event times include **21:03:42** for Defender tampering and **22:18:33** for encryption start. Remaining timestamps should be backfilled from screenshots.
+- **Timeframe:** Full investigation window was not preserved in the source material. Confirmed event times include **2026-01-27T19:13:11 UTC** for Defender tampering and **2026-01-28T04:43:30 UTC** for encryption start. Remaining timestamps should be backfilled from screenshots.
 
 ---
 
 ## 📚 Table of Contents
 
-- [🧠 Hunt Overview](about:blank#-hunt-overview)
-- [🧬 MITRE ATT&CK Summary](about:blank#-mitre-attck-summary)
-- [🔍 Flag Analysis](about:blank#-flag-analysis)
-    - [🚩 Flag 1](about:blank#-flag-1)
-    - [🚩 Flag 2](about:blank#-flag-2)
-    - [🚩 Flag 3](about:blank#-flag-3)
-    - [🚩 Flag 4](about:blank#-flag-4)
-    - [🚩 Flag 5](about:blank#-flag-5)
-    - [🚩 Flag 6](about:blank#-flag-6)
-    - [🚩 Flag 7](about:blank#-flag-7)
-    - [🚩 Flag 8](about:blank#-flag-8)
-    - [🚩 Flag 9](about:blank#-flag-9)
-    - [🚩 Flag 10](about:blank#-flag-10)
-    - [🚩 Flag 11](about:blank#-flag-11)
-    - [🚩 Flag 12](about:blank#-flag-12)
-    - [🚩 Flag 13](about:blank#-flag-13)
-    - [🚩 Flag 14](about:blank#-flag-14)
-    - [🚩 Flag 15](about:blank#-flag-15)
-    - [🚩 Flag 16](about:blank#-flag-16)
-    - [🚩 Flag 17](about:blank#-flag-17)
-    - [🚩 Flag 18](about:blank#-flag-18)
-    - [🚩 Flag 19](about:blank#-flag-19)
-    - [🚩 Flag 20](about:blank#-flag-20)
-    - [🚩 Flag 21](about:blank#-flag-21)
-    - [🚩 Flag 22](about:blank#-flag-22)
-    - [🚩 Flag 23](about:blank#-flag-23)
-    - [🚩 Flag 24](about:blank#-flag-24)
-    - [🚩 Flag 25](about:blank#-flag-25)
-    - [🚩 Flag 26](about:blank#-flag-26)
-    - [🚩 Flag 27](about:blank#-flag-27)
-    - [🚩 Flag 28](about:blank#-flag-28)
-    - [🚩 Flag 29](about:blank#-flag-29)
-    - [🚩 Flag 30](about:blank#-flag-30)
-    - [🚩 Flag 31](about:blank#-flag-31)
-    - [🚩 Flag 32](about:blank#-flag-32)
-    - [🚩 Flag 33](about:blank#-flag-33)
-    - [🚩 Flag 34](about:blank#-flag-34)
-    - [🚩 Flag 35](about:blank#-flag-35)
-    - [🚩 Flag 36](about:blank#-flag-36)
-    - [🚩 Flag 37](about:blank#-flag-37)
-    - [🚩 Flag 38](about:blank#-flag-38)
-    - [🚩 Flag 39](about:blank#-flag-39)
-    - [🚩 Flag 40](about:blank#-flag-40)
-- [🚨 Detection Gaps & Recommendations](about:blank#-detection-gaps--recommendations)
-- [🧾 Final Assessment](about:blank#-final-assessment)
-- [📎 Analyst Notes](about:blank#-analyst-notes)
+- [🧠 Hunt Overview](#hunt-overview)
+- [🧬 MITRE ATT&CK Summary](#mitre-attck-summary)
+- [🔍 Flag Analysis](#flag-analysis)
+    - [🚩 Flag 1](#flag-1)
+    - [🚩 Flag 2](#flag-2)
+    - [🚩 Flag 3](#flag-3)
+    - [🚩 Flag 4](#flag-4)
+    - [🚩 Flag 5](#flag-5)
+    - [🚩 Flag 6](#flag-6)
+    - [🚩 Flag 7](#flag-7)
+    - [🚩 Flag 8](#flag-8)
+    - [🚩 Flag 9](#flag-9)
+    - [🚩 Flag 10](#flag-10)
+    - [🚩 Flag 11](#flag-11)
+    - [🚩 Flag 12](#flag-12)
+    - [🚩 Flag 13](#flag-13)
+    - [🚩 Flag 14](#flag-14)
+    - [🚩 Flag 15](#flag-15)
+    - [🚩 Flag 16](#flag-16)
+    - [🚩 Flag 17](#flag-17)
+    - [🚩 Flag 18](#flag-18)
+    - [🚩 Flag 19](#flag-19)
+    - [🚩 Flag 20](#flag-20)
+    - [🚩 Flag 21](#flag-21)
+    - [🚩 Flag 22](#flag-22)
+    - [🚩 Flag 23](#flag-23)
+    - [🚩 Flag 24](#flag-24)
+    - [🚩 Flag 25](#flag-25)
+    - [🚩 Flag 26](#flag-26)
+    - [🚩 Flag 27](#flag-27)
+    - [🚩 Flag 28](#flag-28)
+    - [🚩 Flag 29](#flag-29)
+    - [🚩 Flag 30](#flag-30)
+    - [🚩 Flag 31](#flag-31)
+    - [🚩 Flag 32](#flag-32)
+    - [🚩 Flag 33](#flag-33)
+    - [🚩 Flag 34](#flag-34)
+    - [🚩 Flag 35](#flag-35)
+    - [🚩 Flag 36](#flag-36)
+    - [🚩 Flag 37](#flag-37)
+    - [🚩 Flag 38](#flag-38)
+    - [🚩 Flag 39](#flag-39)
+    - [🚩 Flag 40](#flag-40)
+- [🚨 Detection Gaps & Recommendations](#detection-gaps-and-recommendations)
+- [🧾 Final Assessment](#final-assessment)
+- [📎 Analyst Notes](#analyst-notes)
 
 ---
 
+<a id="hunt-overview"></a>
 ## 🧠 Hunt Overview
 
 The reconstructed attack path begins on **AS-PC2**, where **AnyDesk** appears to have been used as the remote-access mechanism. The binary executed from the suspicious path **`C:\Users\Public`**, correlated to user **`David.Mitchell`**, and communicated with attacker-associated infrastructure including **`88.97.164.155`** and **`relay-0b975d23.net.anydesk.com`**. The attacker then established additional capability through **`wsync.exe`** in **`C:\ProgramData\`**, followed by **`scan.exe`** to enumerate internal targets, including **`10.1.0.154`** and **`10.1.0.183`**.
@@ -87,6 +88,7 @@ Activity later shifted to **AS-SRV**, where the attacker operated with **`as.srv
 
 ---
 
+<a id="mitre-attck-summary"></a>
 ## 🧬 MITRE ATT&CK Summary
 
 | Flag | Technique Category | MITRE ID | Priority |
@@ -134,12 +136,14 @@ Activity later shifted to **AS-SRV**, where the attacker operated with **`as.srv
 
 ---
 
+<a id="flag-analysis"></a>
 ## 🔍 Flag Analysis
 
 *All flags below are collapsible for readability.*
 
 ---
 
+<a id="flag-1"></a>
 <details>
 <summary>&#128681; <strong>Flag 1: Threat Actor Identification</strong></summary>
 
@@ -187,12 +191,11 @@ When the note reveals the family quickly, pivot from the note to extension, writ
 
 </details>
 
-
 ---
 
+<a id="flag-2"></a>
 <details>
 <summary>&#128681; <strong>Flag 2: Negotiation Portal Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -237,15 +240,13 @@ Preserve ransom-note content during triage and standardize extraction of extorti
 
 Capture portal values early because note artifacts may be removed by cleanup activity later in the intrusion.
 
-
-
 </details>
 
 ---
 
+<a id="flag-3"></a>
 <details>
 <summary>&#128681; <strong>Flag 3: Victim Identifier Extraction</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -284,15 +285,13 @@ Ensure ransomware triage procedures capture all note metadata, not just the fami
 
 Victim IDs are useful evidence markers even when they are not directly searchable in telemetry.
 
-
-
 </details>
 
 ---
 
+<a id="flag-4"></a>
 <details>
 <summary>&#128681; <strong>Flag 4: Encrypted Artifact Marker</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -337,15 +336,13 @@ Alert on bursts of file activity where filenames contain a newly observed ransom
 
 Do not assume the ransomware marker is the final extension; embedded markers like `.akira.lnk` can break `endswith` queries.
 
-
-
 </details>
 
 ---
 
+<a id="flag-5"></a>
 <details>
 <summary>&#128681; <strong>Flag 5: Payload Domain Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -391,15 +388,13 @@ Alert on uncommon domains contacted by script interpreters, newly introduced too
 
 Pivot from suspicious domains to `RemoteIP`, then to the process and files created around the same time.
 
-
-
 </details>
 
 ---
 
+<a id="flag-6"></a>
 <details>
 <summary>&#128681; <strong>Flag 6: Ransomware Staging Domain Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -443,15 +438,13 @@ Treat content-delivery style subdomains as suspicious when they appear in conjun
 
 Filter staging-domain hits by process name to isolate which utility actually performed the transfer.
 
-
-
 </details>
 
 ---
 
+<a id="flag-7"></a>
 <details>
 <summary>&#128681; <strong>Flag 7: Command-and-Control IP Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -459,7 +452,7 @@ Identify remote IP infrastructure associated with the suspicious domains.
 
 ### 📌 Finding
 
-Using the same query as before we identified two RemoteIP’s that accessed the RemoteURL’s on 1/27/2026 and a third unrelated RemoteURL on 1/28/2026. The observed infrastructure resolved to **`104.21.30.237`** and **`172.67.174.46`**. 
+Using the same query as before we identified two RemoteIP’s that accessed the RemoteURL’s on 1/27/2026 and a third unrelated RemoteURL on 1/28/2026. The observed infrastructure resolved to **`104.21.30.237`** and **`172.67.174.46`**.
 
 ### 🔍 Evidence
 
@@ -495,15 +488,13 @@ Correlate low-prevalence remote IPs with suspicious execution and file-creation 
 
 Once you have suspicious domains, always pivot them to IPs in case other events only preserved the address.
 
-
-
 </details>
 
 ---
 
+<a id="flag-8"></a>
 <details>
 <summary>&#128681; <strong>Flag 8: Remote Tool Relay Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -557,15 +548,13 @@ Baseline approved remote tools and alert on unapproved or unusually deployed rem
 
 For remote support software, path and user context often tell you more than the binary name alone.
 
-
-
 </details>
 
 ---
 
+<a id="flag-9"></a>
 <details>
 <summary>&#128681; <strong>Flag 9: Evasion Script Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -611,15 +600,13 @@ Flag destructive or defense-evasion themed scripts launched from shells or newly
 
 Names like `kill`, `disable`, `stop`, or `clean` deserve immediate scrutiny in ransomware hunts.
 
-
-
 </details>
 
 ---
 
+<a id="flag-10"></a>
 <details>
 <summary>&#128681; <strong>Flag 10: Evasion Script Hash Validation</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -664,15 +651,13 @@ Store file hashes for dropped scripts and enrich them during incident scoping.
 
 When filenames are common, the hash is the cleaner long-term pivot across environments.
 
-
-
 </details>
 
 ---
 
+<a id="flag-11"></a>
 <details>
 <summary>&#128681; <strong>Flag 11: Defender Registry Tampering Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -680,7 +665,7 @@ Identify explicit tampering against Microsoft Defender-related controls.
 
 ### 📌 Finding
 
-The attacker modified the registry value **`DisableAntiSpyware`**. We know from the MDE alert provided that an alert went off for an “Attempt to turn off Microsoft Defender Antivirus”. Using that information we search `DeviceRegistryEvents` for `DisableAntiSpyware` as a `RegistryValueName`. 
+The attacker modified the registry value **`DisableAntiSpyware`**. We know from the MDE alert provided that an alert went off for an “Attempt to turn off Microsoft Defender Antivirus”. Using that information we search `DeviceRegistryEvents` for `DisableAntiSpyware` as a `RegistryValueName`.
 
 ### 🔍 Evidence
 
@@ -717,15 +702,13 @@ Create high-severity detections for changes to Defender policy keys, especially 
 
 Search the exact value first, then widen to the surrounding product registry path for nearby changes.
 
-
-
 </details>
 
 ---
 
+<a id="flag-12"></a>
 <details>
 <summary>&#128681; <strong>Flag 12: Registry Tampering Timestamp Confirmation</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -771,15 +754,13 @@ Prioritize registry-based security-control changes that occur shortly before dow
 
 A single trusted timestamp can become the anchor for reconstructing the rest of the intrusion timeline.
 
-
-
 </details>
 
 ---
 
+<a id="flag-13"></a>
 <details>
 <summary>&#128681; <strong>Flag 13: LSASS Reconnaissance Command Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -832,15 +813,13 @@ Monitor LSASS discovery commands outside troubleshooting, administration, or IR 
 
 Basic reconnaissance commands can be the breadcrumb that explains later privilege use.
 
-
-
 </details>
 
 ---
 
+<a id="flag-14"></a>
 <details>
 <summary>&#128681; <strong>Flag 14: LSASS Named Pipe Artifact Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -848,7 +827,7 @@ Identify a stronger LSASS-related artifact supporting credential-access suspicio
 
 ### 📌 Finding
 
-The investigation identified **`\Device\NamedPipe\lsass`** in pipe-related telemetry. To do this we search for `ActionType's` that contain `“pipe”` and `LSASS` in the `AdditionalFields`. 
+The investigation identified **`\Device\NamedPipe\lsass`** in pipe-related telemetry. To do this we search for `ActionType's` that contain `“pipe”` and `LSASS` in the `AdditionalFields`.
 
 ### 🔍 Evidence
 
@@ -886,15 +865,13 @@ Monitor LSASS-related pipe events and correlate them with suspicious process lau
 
 If the standard columns are sparse, inspect `AdditionalFields` before discarding the lead.
 
-
-
 </details>
 
 ---
 
+<a id="flag-15"></a>
 <details>
 <summary>&#128681; <strong>Flag 15: Remote Access Tool Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -939,15 +916,13 @@ Alert on remote administration tools executed outside approved deployment and su
 
 Start with the tool name, then pivot into path, account, and network activity.
 
-
-
 </details>
 
 ---
 
+<a id="flag-16"></a>
 <details>
 <summary>&#128681; <strong>Flag 16: Suspicious Execution Path Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -992,15 +967,13 @@ Flag remote-support tools executed from `Users\Public`, `Downloads`, `%Temp%`, o
 
 For legitimate-looking binaries, the path is often the most suspicious field.
 
-
-
 </details>
 
 ---
 
+<a id="flag-17"></a>
 <details>
 <summary>&#128681; <strong>Flag 17: Attacker IP Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1045,15 +1018,13 @@ Correlate remote access tool usage with uncommon external IPs and suspicious ins
 
 After identifying the operator IP, search it across all hosts to test for broader compromise.
 
-
-
 </details>
 
 ---
 
+<a id="flag-18"></a>
 <details>
 <summary>&#128681; <strong>Flag 18: Compromised User Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1098,15 +1069,13 @@ Include user context in remote-tool detections so analysts can quickly separate 
 
 Once a user is identified, pivot to their logons, downloads, and remote session activity.
 
-
-
 </details>
 
 ---
 
+<a id="flag-19"></a>
 <details>
 <summary>&#128681; <strong>Flag 19: Primary Beacon Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1152,15 +1121,13 @@ Monitor for newly introduced binaries with utility-like names that appear shortl
 
 Hash, path, and first-seen time usually provide a stronger story than the filename alone.
 
-
-
 </details>
 
 ---
 
+<a id="flag-20"></a>
 <details>
 <summary>&#128681; <strong>Flag 20: Beacon Location Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1205,15 +1172,13 @@ Alert on newly created executables under `ProgramData`, especially when paired w
 
 Path-based pivots often expose other staged tools in the same directory.
 
-
-
 </details>
 
 ---
 
+<a id="flag-21"></a>
 <details>
 <summary>&#128681; <strong>Flag 21: Primary Beacon Hash Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1259,15 +1224,13 @@ Capture and enrich hashes for suspicious utilities to support faster environment
 
 When a suspicious filename appears with a hash, use the hash for your broadest pivot.
 
-
-
 </details>
 
 ---
 
+<a id="flag-22"></a>
 <details>
 <summary>&#128681; <strong>Flag 22: Replacement Beacon Hash Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1312,15 +1275,13 @@ Track filename-to-hash changes for suspicious utilities in persistence-friendly 
 
 Use first-seen order to infer which sample was likely the original drop and which was the replacement.
 
-
-
 </details>
 
 ---
 
+<a id="flag-23"></a>
 <details>
 <summary>&#128681; <strong>Flag 23: Scanner Tool Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1373,15 +1334,13 @@ Alert on low-prevalence scanner utilities launched from user-associated director
 
 Portable scanning tools are often staged close to the compromised user’s working directories.
 
-
-
 </details>
 
 ---
 
+<a id="flag-24"></a>
 <details>
 <summary>&#128681; <strong>Flag 24: Scanner Hash Validation</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1427,15 +1386,13 @@ Retain hashes for discovery tools because they are useful for environment-wide r
 
 When an executable name is generic, the SHA256 is usually the better long-term search key.
 
-
-
 </details>
 
 ---
 
+<a id="flag-25"></a>
 <details>
 <summary>&#128681; <strong>Flag 25: Scanner Execution Command Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1482,15 +1439,13 @@ Flag portable execution of network tools launched from downloads or temporary di
 
 Command-line switches often reveal operator intent even when the binary name is vague.
 
-
-
 </details>
 
 ---
 
+<a id="flag-26"></a>
 <details>
 <summary>&#128681; <strong>Flag 26: Internal Network Enumeration Targets</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1546,15 +1501,13 @@ Detect short-interval connection attempts to multiple internal IPs from a single
 
 Once you know the internal targets, pivot each one for later logons, file creation, and impact artifacts.
 
-
-
 </details>
 
 ---
 
+<a id="flag-27"></a>
 <details>
 <summary>&#128681; <strong>Flag 27: Lateral Movement Account Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1599,15 +1552,13 @@ Alert on local administrator account usage on servers outside approved maintenan
 
 When impact lands on a server, identify the account context early because it often explains the whole chain.
 
-
-
 </details>
 
 ---
 
+<a id="flag-28"></a>
 <details>
 <summary>&#128681; <strong>Flag 28: Initial Tool Download Method Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1653,15 +1604,13 @@ Generate high-severity alerts for BITSAdmin usage on servers when followed by fi
 
 If a LOLBIN appears first, search the surrounding time window for fallback transfer methods.
 
-
-
 </details>
 
 ---
 
+<a id="flag-29"></a>
 <details>
 <summary>&#128681; <strong>Flag 29: Fallback Transfer Method Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1669,7 +1618,7 @@ Identify the fallback transfer method used when the first method was insufficien
 
 ### 📌 Finding
 
-The attacker used PowerShell **`Invoke-WebRequest`** as the fallback transfer method. We identify this by searching `DeviceEvents` for `ActionType "PowerShellCommand"` and filter for `AdditionalFields` that include `Invoke-WebRequest`. This reveals multiple other tools downloaded using `Invoke-WebRequest` . 
+The attacker used PowerShell **`Invoke-WebRequest`** as the fallback transfer method. We identify this by searching `DeviceEvents` for `ActionType "PowerShellCommand"` and filter for `AdditionalFields` that include `Invoke-WebRequest`. This reveals multiple other tools downloaded using `Invoke-WebRequest` .
 
 ### 🔍 Evidence
 
@@ -1708,15 +1657,13 @@ Alert on PowerShell web-download activity that is immediately followed by execut
 
 When one transfer method appears to fail, search for a second method in the same execution chain.
 
-
-
 </details>
 
 ---
 
+<a id="flag-30"></a>
 <details>
 <summary>&#128681; <strong>Flag 30: Staging Tool Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1762,15 +1709,13 @@ Monitor for uncommon binaries used to prepare data shortly before archive creati
 
 If you find a staging utility, immediately pivot for archives and outbound network activity in the same timeframe.
 
-
-
 </details>
 
 ---
 
+<a id="flag-31"></a>
 <details>
 <summary>&#128681; <strong>Flag 31: Staging Tool Hash Validation</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1817,15 +1762,13 @@ Retain hashes for custom or uncommon utilities involved in collection and stagin
 
 Hashes help separate the exact malicious utility from any benign file with a similar name.
 
-
-
 </details>
 
 ---
 
+<a id="flag-32"></a>
 <details>
 <summary>&#128681; <strong>Flag 32: Exfiltration Archive Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1871,15 +1814,13 @@ Alert on archive creation by uncommon tools, especially near suspicious download
 
 Search for `.zip`, `.7z`, and `.rar` creation immediately before impact to capture theft staging.
 
-
-
 </details>
 
 ---
 
+<a id="flag-33"></a>
 <details>
 <summary>&#128681; <strong>Flag 33: Ransomware Binary Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1925,15 +1866,13 @@ Alert on newly created executables that immediately precede encryption-like or n
 
 Once the ransomware filename is known, pivot from it to staging process, note origin, and host scope.
 
-
-
 </details>
 
 ---
 
+<a id="flag-34"></a>
 <details>
 <summary>&#128681; <strong>Flag 34: Ransomware Hash Validation</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -1980,15 +1919,13 @@ Retain and enrich ransomware payload hashes for future blocklisting and environm
 
 If filenames are reused or generic, the payload hash is the cleaner environment-wide search artifact.
 
-
-
 </details>
 
 ---
 
+<a id="flag-35"></a>
 <details>
 <summary>&#128681; <strong>Flag 35: Ransomware Staging Process Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -2034,15 +1971,13 @@ Prioritize PowerShell-driven file drops that later execute as ransomware or othe
 
 The file-creation event often gives the cleanest answer for who staged a payload.
 
-
-
 </details>
 
 ---
 
+<a id="flag-36"></a>
 <details>
 <summary>&#128681; <strong>Flag 36: Recovery Inhibition Command Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -2064,8 +1999,8 @@ The attacker executed **`wmic shadowcopy delete`** on **AS-PC2**. We identify th
 
 `vssadmin  delete shadows /all /quiet`
 
-`cmd.exe /c "wmic shadowcopy delete”` 
- 
+`cmd.exe /c "wmic shadowcopy delete”`
+
 `wmic  shadowcopy delete` |
 | Purpose | Shadow copy removal / recovery inhibition |
 
@@ -2094,15 +2029,13 @@ Create immediate, high-severity alerts for shadow copy deletion or similar recov
 
 This command is often one of the clearest indicators that impact is either imminent or already underway.
 
-
-
 </details>
 
 ---
 
+<a id="flag-37"></a>
 <details>
 <summary>&#128681; <strong>Flag 37: Ransom Note Origin Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -2110,7 +2043,7 @@ Identify which process dropped the ransom note after encryption began.
 
 ### 📌 Finding
 
-The ransom note was dropped by **`updater.exe`**. We idenfied this by searching `DeviceFileEvents` for the ransome note that we saw from the original MDE alert and our earlier search for `flag 33`. 
+The ransom note was dropped by **`updater.exe`**. We idenfied this by searching `DeviceFileEvents` for the ransome note that we saw from the original MDE alert and our earlier search for `flag 33`.
 
 ### 🔍 Evidence
 
@@ -2149,15 +2082,13 @@ Alert on note-like artifacts written by newly dropped executables, especially af
 
 When note naming is uncertain, start with the writer process and summarize the files it created.
 
-
-
 </details>
 
 ---
 
+<a id="flag-38"></a>
 <details>
 <summary>&#128681; <strong>Flag 38: Encryption Start Time Confirmation</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -2202,15 +2133,13 @@ Create timeline-aware detections that correlate the first encrypted artifact wit
 
 Use the earliest confirmed encryption event as the anchor for walking backward through the intrusion.
 
-
-
 </details>
 
 ---
 
+<a id="flag-39"></a>
 <details>
 <summary>&#128681; <strong>Flag 39: Cleanup Script Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -2256,15 +2185,13 @@ Flag cleanup-themed scripts executed after ransomware, archive creation, or payl
 
 When you see `clean.bat`, pivot to deleted files, note timing, and evidence-removal behavior immediately.
 
-
-
 </details>
 
 ---
 
+<a id="flag-40"></a>
 <details>
 <summary>&#128681; <strong>Flag 40: Affected Host Scope Identification</strong></summary>
-
 
 ### 🎯 Objective
 
@@ -2309,12 +2236,11 @@ Correlate key payload, staging, and impact artifacts into a host-scope analytic 
 
 For final scoping, combine impact markers with core tooling artifacts instead of relying on a single indicator.
 
-
-
 </details>
 
 ---
 
+<a id="detection-gaps-and-recommendations"></a>
 ## 🚨 Detection Gaps & Recommendations
 
 ### Observed Gaps
@@ -2336,12 +2262,14 @@ For final scoping, combine impact markers with core tooling artifacts instead of
 
 ---
 
+<a id="final-assessment"></a>
 ## 🧾 Final Assessment
 
 The available evidence supports a **high-confidence Akira ransomware intrusion** with likely **initial access through abused remote desktop software**, **post-compromise beaconing and reconnaissance**, **privileged movement into a server**, **data staging for theft**, and **destructive impact through ransomware execution**. The presence of **`exfil_data.zip`**, **`updater.exe`**, **`wmic shadowcopy delete`**, and filenames containing **`.akira`** indicates a mature intrusion sequence consistent with **double-extortion tradecraft**. Defensive improvements should focus on **remote-access control, Defender tampering visibility, download-and-staging detections, archive creation, recovery-inhibition commands, and privileged activity correlation across hosts**.
 
 ---
 
+<a id="analyst-notes"></a>
 ## 📎 Analyst Notes
 
 - Report structure follows the provided template, but each of the **40 flags** is preserved as its own individual section.
