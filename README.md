@@ -2349,5 +2349,3 @@ The available evidence supports a **high-confidence Akira ransomware intrusion**
 - Exact timestamps, parent processes, and some lineage details were not fully preserved in the source material and are intentionally marked for screenshot backfill rather than invented.
 - KQL sections were sourced from the reconstructed hunt pack and refined where needed to reflect preserved filename behavior, including the `.akira` marker appearing inside filenames such as `.akira.lnk`.
 - Evidence remains reproducible through Defender-style advanced hunting.
-
-
