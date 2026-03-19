@@ -1,8 +1,6 @@
-# The Buyer - CyberRange Live Threat Hunt
+# 🛡️ Threat Hunt Report – The Buyer / Akira Ransomware Intrusion
 
 ![Threat Hunt Cover Image](screenshots/The_Buyer.png)
-
-# 🛡️ Threat Hunt Report – The Buyer / Akira Ransomware Intrusion
 
 ---
 
