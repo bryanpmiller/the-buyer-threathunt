@@ -22,7 +22,7 @@ This hunt reconstructed a multi-stage ransomware intrusion affecting `AS-PC2` an
 
 - **Environment:** Microsoft Defender Advanced Hunting / cyber range investigation environment
 - **Data Sources:** `DeviceProcessEvents`, `DeviceFileEvents`, `DeviceNetworkEvents`, `DeviceRegistryEvents`, `DeviceLogonEvents`, `DeviceEvents`
-- **Timeframe:** First known indicator of compromise occured at **2026-01-27T19:13:11 UTC**. Last known indicator of compromise occured at **2026-01-28T04:43:30 UTC**.      After that time their have been no additional indicators that the attack is ongoing.
+- **Timeframe:** First known indicator of compromise occured at **2026-01-27T19:13:11 UTC**. Last known indicator of compromise occured at **2026-01-28T04:43:30 UTC**.      After that time there have been no additional indicators that the attack is ongoing.
 
 ---
 
