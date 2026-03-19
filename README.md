@@ -73,7 +73,6 @@ This hunt reconstructed a multi-stage ransomware intrusion affecting `AS-PC2` an
     - [🚩 Flag 40](#flag-40)
 - [🚨 Detection Gaps & Recommendations](#detection-gaps-and-recommendations)
 - [🧾 Final Assessment](#final-assessment)
-- [📎 Analyst Notes](#analyst-notes)
 
 ---
 
